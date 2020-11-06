@@ -2,15 +2,15 @@
 
 ### 企业版微信
 
-企业版微信的安装参考https://www.jianshu.com/p/b745f0d36253这个回答，很快就可以安装好
+企业版微信的安装参考https://www.jianshu.com/p/b745f0d36253 这个回答，很快就可以安装好
 
-    git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git(拉取代码)
+    git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git     (拉取代码)
 
-    cd deepin-wine-for-ubuntu进入上面下载的代码的位置
+    cd deepin-wine-for-ubuntu    进入上面下载的代码的位置
 
-    ./install.sh 执行安装命令
+    ./install.sh    执行安装命令
 
-    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.weixin.work/deepin.com.weixin.work_2.4.16.1347deepin0_i386.deb获取安装包
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.weixin.work/deepin.com.weixin.work_2.4.16.1347deepin0_i386.deb   获取安装包
 
     sudo dpkg -i deepin.com.weixin.work_2.4.16.1347deepin0_i386.deb安装
 
@@ -22,7 +22,8 @@
 
     cd deepin-wine-for-ubuntu
 
-    或许安装包
+    获取安装包
+    
     wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/deepin.com.wechat_2.6.8.65deepin0_i386.deb
 
 3.执行微信的安装代码
@@ -30,7 +31,6 @@
     sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb
 
    执行上面的命令会报错：deepin.com.wechat:i386 依赖于 deepin-wine32-preloader；然而： 软件包 deepin-wine32-preloader:i386 尚未配置。
-
    于是需要配置i386这个依赖，网上有几个参考的网页，其中综合了两个人的网页，成功安装，过程略掉，直接讲操作
 
 4.1 进入上层目录：

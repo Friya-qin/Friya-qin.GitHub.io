@@ -10,7 +10,7 @@
 
     ./install.sh 执行安装命令
 
-4.wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.weixin.work/deepin.com.weixin.work_2.4.16.1347deepin0_i386.deb获取安装包
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.weixin.work/deepin.com.weixin.work_2.4.16.1347deepin0_i386.deb获取安装包
 
     sudo dpkg -i deepin.com.weixin.work_2.4.16.1347deepin0_i386.deb安装
 

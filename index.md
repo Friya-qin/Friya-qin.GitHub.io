@@ -1,37 +1,94 @@
-## Welcome to GitHub Pages
+## ubuntu企业微信和微信安装全过程
 
-You can use the [editor on GitHub](https://github.com/Friya-qin/Friya-qin.GitHub.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+一、企业版微信
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+企业版微信的安装参考https://www.jianshu.com/p/b745f0d36253这个回答，很快就可以安装好
 
-### Markdown
+    git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git(拉取代码)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    cd deepin-wine-for-ubuntu进入上面下载的代码的位置
 
-```markdown
-Syntax highlighted code block
+    ./install.sh 执行安装命令
 
-# Header 1
-## Header 2
-### Header 3
+4.wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.weixin.work/deepin.com.weixin.work_2.4.16.1347deepin0_i386.deb获取安装包
 
-- Bulleted
-- List
+    sudo dpkg -i deepin.com.weixin.work_2.4.16.1347deepin0_i386.deb安装
 
-1. Numbered
-2. List
+    搜索企业微信，即可打开使用
 
-**Bold** and _Italic_ and `Code` text
+### 微信安装
 
-[Link](url) and ![Image](src)
-```
+    在命令行中进入上面企业微信的那个目录
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+    cd deepin-wine-for-ubuntu
 
-### Jekyll Themes
+    或许安装包
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/deepin.com.wechat_2.6.8.65deepin0_i386.deb
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Friya-qin/Friya-qin.GitHub.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+3.执行微信的安装代码
+sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb
 
-### Support or Contact
+    执行上面的命令会报错：deepin.com.wechat:i386 依赖于 deepin-wine32-preloader；然而： 软件包 deepin-wine32-preloader:i386 尚未配置。
+    看到这个问题不要慌！已经给解决了！！！
+    看到这个问题不要慌！已经给解决了！！！
+    看到这个问题不要慌！已经给解决了！！！
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+于是需要配置i386这个依赖，网上有几个参考的网页，其中综合了两个人的网页，成功安装，过程略掉，直接讲操作
+
+4.1 进入上层目录：
+
+    cd ..
+
+4.2 创建一个新目录用于放置这些需要额外安装的软件包依赖,并进入这个目录
+
+    mkdir deep
+  
+     cd deep
+
+4.3 无脑复制下面这段内容到命令行
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine_2.18-22~rc0_all.deb
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32_2.18-22~rc0_i386.deb
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-preloader_2.18-22~rc0_i386.deb
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine-helper/deepin-wine-helper_1.2deepin8_i386.deb
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine-plugin/deepin-wine-plugin_1.0deepin2_amd64.deb
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine-plugin-virtual/deepin-wine-plugin-virtual_1.0deepin3_all.deb
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine-uninstaller/deepin-wine-uninstaller_0.1deepin2_i386.deb
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/u/udis86/udis86_1.72-2_i386.deb
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-fonts-wine_2.18-22~rc0_all.deb
+
+    wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine_2.18-22~rc0_i386.deb
+
+    wget https://mirrors.aliyun.com/deepin/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_1.5.1-2_amd64.deb
+
+    wget https://mirrors.aliyun.com/deepin/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_1.5.1-2_i386.deb
+
+4.4 准备添加32位支持
+
+    sudo dpkg --add-architecture i386
+
+4.5 添加成功，准备刷新apt缓存信息
+
+    sudo apt update
+
+4.6安装上面4.3中提到了所有deb软件包
+
+    sudo dpkg -i *.deb
+
+回到微信安装包deb所在的目录,重新安装微信的软件
+
+    cd ..
+
+    cd deepin-wine-for-ubuntu
+
+    sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb
+
+然后搞定了！

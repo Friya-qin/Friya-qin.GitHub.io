@@ -1,6 +1,6 @@
 ## ubuntu企业微信和微信安装全过程
 
-一、企业版微信
+### 企业版微信
 
 企业版微信的安装参考https://www.jianshu.com/p/b745f0d36253这个回答，很快就可以安装好
 
@@ -14,7 +14,7 @@
 
     sudo dpkg -i deepin.com.weixin.work_2.4.16.1347deepin0_i386.deb安装
 
-    搜索企业微信，即可打开使用
+   搜索企业微信，即可打开使用
 
 ### 微信安装
 
@@ -26,14 +26,12 @@
     wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/deepin.com.wechat_2.6.8.65deepin0_i386.deb
 
 3.执行微信的安装代码
-sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb
 
-    执行上面的命令会报错：deepin.com.wechat:i386 依赖于 deepin-wine32-preloader；然而： 软件包 deepin-wine32-preloader:i386 尚未配置。
-    看到这个问题不要慌！已经给解决了！！！
-    看到这个问题不要慌！已经给解决了！！！
-    看到这个问题不要慌！已经给解决了！！！
+    sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb
 
-于是需要配置i386这个依赖，网上有几个参考的网页，其中综合了两个人的网页，成功安装，过程略掉，直接讲操作
+   执行上面的命令会报错：deepin.com.wechat:i386 依赖于 deepin-wine32-preloader；然而： 软件包 deepin-wine32-preloader:i386 尚未配置。
+
+   于是需要配置i386这个依赖，网上有几个参考的网页，其中综合了两个人的网页，成功安装，过程略掉，直接讲操作
 
 4.1 进入上层目录：
 
